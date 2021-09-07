@@ -1,6 +1,6 @@
 import './App.css';
 import { GetPosts } from './Components/GetPosts';
-// import {UserDetails} from './Components/UserDetails'
+import {UserDetails} from './Components/UserDetails'
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
         <h1>Posts</h1>
       </header>
       <main>
-        <GetPosts/>
+        <UserDetails/>
+        {/* <GetPosts/> */}
       </main>
     </div>
   );
