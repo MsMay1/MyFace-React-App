@@ -14,8 +14,8 @@ function App() {
               <GetPosts/>
           </Route> 
           
-          <Route path = "/user/:id">
-            <UserDetails id="5"/>
+          <Route path = "/user/:userId">
+            <UserDetails/>
           </Route>
 
         </Switch>

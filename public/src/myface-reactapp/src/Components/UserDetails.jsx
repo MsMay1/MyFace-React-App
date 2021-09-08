@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { EachUser } from "./EachUser";
+import { useParams } from "react-router";
 
-export function UserDetails(props) {
-
-    const [userDetails, setUserDetails] = useState([])
+export function UserDetails() {
+    const {userId} = useParams()
+    const [userDetails, setUserDetails] = useState({})
     const [userPosts, setUserPost] = useState([])
 
     useEffect(() => {
         const getUserDetails = async function () {
-            const response = await fetch(`http://localhost:3001/users/${props.id}`);
+            const response = await fetch(`http://localhost:3001/users/${userId}`);
             const json = await response.json();
 
             setUserDetails(json)
@@ -18,13 +19,13 @@ export function UserDetails(props) {
         
     }, [])
 
-    console.log(userPosts)
+    console.log(userDetails)
  
 //MAP OF POSTS NOT WORKING    
-// {userDetails.posts.map(
+//  {userDetails.posts.map(
 //     function(post, index){
 //     return <EachUser post = {post} key = {index}/>
-// })}
+//    })}
 
 
       return(  
