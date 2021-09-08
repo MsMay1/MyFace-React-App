@@ -1,21 +1,27 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { GetPosts } from './Components/GetPosts';
-import {UserDetails} from './Components/UserDetails'
+import { UserDetails } from './Components/UserDetails'
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Posts</h1>
-      </header>
-      <main>
-        <UserDetails/>
-        {/* <GetPosts/> */}
-      </main>
-    </div>
+    <Router>
+        <Switch>
+
+          <Route path = "/posts" >
+              <GetPosts/>
+          </Route> 
+          
+          <Route path = "/user/:id">
+            <UserDetails id="5"/>
+          </Route>
+
+        </Switch>
+      
+    </Router>
+
   );
 }
 

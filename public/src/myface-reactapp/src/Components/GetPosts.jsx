@@ -21,12 +21,17 @@ export function GetPosts(){
         
     }, []);
 
-  return posts.map(
-        function(post, index){
-            return <EachPost post = {post} key = {index}/>
-        }
+  return (
+      <div>
+        <header className="App-header">
+            <h1>Posts</h1>
+        </header>
+            {posts.map(
+                function(post, index){
+                return <EachPost post = {post} key = {index}/>
+                })
+            } 
+      </div>
    )
-
-
 }
 

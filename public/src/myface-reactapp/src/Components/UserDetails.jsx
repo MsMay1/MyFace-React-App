@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { EachUser } from "./EachUser";
 
-export function UserDetails() {
+export function UserDetails(props) {
 
     const [userDetails, setUserDetails] = useState([])
     const [userPosts, setUserPost] = useState([])
 
     useEffect(() => {
         const getUserDetails = async function () {
-            const response = await fetch(`http://localhost:3001/users/1`);
+            const response = await fetch(`http://localhost:3001/users/${props.id}`);
             const json = await response.json();
 
             setUserDetails(json)
