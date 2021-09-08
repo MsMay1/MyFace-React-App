@@ -3,27 +3,28 @@ import { EachUser } from "./EachUser";
 
 export function UserDetails() {
 
-    const [userDetails, setUserDetails] = useState({})
+    const [userDetails, setUserDetails] = useState([])
+    const [userPosts, setUserPost] = useState([])
 
     useEffect(() => {
         const getUserDetails = async function () {
-            const response = await fetch("http://localhost:3001/users/1");
+            const response = await fetch(`http://localhost:3001/users/1`);
             const json = await response.json();
 
             setUserDetails(json)
+            setUserPost(json.posts)
         }
         getUserDetails();
         
     }, [])
 
-    console.log(userDetails)
+    console.log(userPosts)
  
 //MAP OF POSTS NOT WORKING    
-//     userDetails.posts.map(
-//         function(post, index){
-//             return <EachUser post = {post} key = {index}/>
-//         }
-//    )
+// {userDetails.posts.map(
+//     function(post, index){
+//     return <EachUser post = {post} key = {index}/>
+// })}
 
 
       return(  
@@ -31,6 +32,11 @@ export function UserDetails() {
             <h1>{userDetails.name}</h1>
             <p>{userDetails.username}</p>
             <img src={userDetails.profileImageUrl} />
+            {userPosts.map(
+                function(post, index){
+                return <EachUser post = {post} key = {index}/>
+            })}
+   
         </div>
       )
 
