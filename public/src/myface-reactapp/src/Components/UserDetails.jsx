@@ -22,10 +22,10 @@ export function UserDetails() {
     console.log(userDetails)
  
 //MAP OF POSTS NOT WORKING    
-//  {userDetails.posts.map(
+// {userDetails.posts.map(
 //     function(post, index){
 //     return <EachUser post = {post} key = {index}/>
-//    })}
+// })}
 
 
       return(  
