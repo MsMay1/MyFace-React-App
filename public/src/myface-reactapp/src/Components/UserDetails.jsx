@@ -22,21 +22,24 @@ export function UserDetails() {
     console.log(userDetails)
  
 //MAP OF POSTS NOT WORKING    
-// {userDetails.posts.map(
+//  {userDetails.posts.map(
 //     function(post, index){
 //     return <EachUser post = {post} key = {index}/>
-// })}
+//    })}
 
 
       return(  
-        <div>
+        <div className = "users-page">
             <h1>{userDetails.name}</h1>
             <p>{userDetails.username}</p>
             <img src={userDetails.profileImageUrl} />
-            {userPosts.map(
+            <div id = "Users-Posts-Container">
+                {userPosts.map(
                 function(post, index){
                 return <EachUser post = {post} key = {index}/>
-            })}
+                })}
+            </div>
+
    
         </div>
       )

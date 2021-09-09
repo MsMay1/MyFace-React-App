@@ -22,8 +22,8 @@ export function GetPosts(){
     }, []);
 
   return (
-      <div>
-        <header className="App-header">
+      <div className ="posts-page" >
+        <header>
             <h1>Posts</h1>
         </header>
             {posts.map(
@@ -33,5 +33,7 @@ export function GetPosts(){
             } 
       </div>
    )
+
+
 }
 
