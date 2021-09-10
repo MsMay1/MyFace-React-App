@@ -1,3 +1,4 @@
+
 import "./App.scss" 
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -14,10 +15,10 @@ function App() {
               <GetPosts/>
           </Route> 
           
-          <Route path = "/create-user" >
-              <CreateUser/>
-          </Route>
-k
+        <Route path="/user/create">
+          <CreateUser />
+        </Route>
+
           <Route path = "/users/:userId">
             <UserDetails/>
           </Route>
@@ -30,6 +31,7 @@ k
     </Router>
 
   );
+
 }
 
 export default App;
