@@ -10,14 +10,14 @@ function App() {
     <Router>
         <Switch>
 
-          <Route path = "/posts" >
+          <Route path = "/posts/" >
               <GetPosts/>
           </Route> 
           
           <Route path = "/create-user" >
               <CreateUser/>
           </Route>
-
+k
           <Route path = "/users/:userId">
             <UserDetails/>
           </Route>

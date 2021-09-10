@@ -18,8 +18,6 @@ export function UserDetails() {
         getUserDetails();
         
     }, [])
-
-    console.log(userDetails)
  
 //MAP OF POSTS NOT WORKING    
 //  {userDetails.posts.map(

@@ -11,6 +11,10 @@
       }
   }
  
+  .next {
+    height:20px;
+    width:100px;
+  }
 html{
   @include general-body-layout();
 }

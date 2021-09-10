@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { EachPost } from "./EachPosts";
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useParams } from "react-router";
 //fetch from APi using useEffect
 // extract json == array of objects
 // set the JSon as posts - useState
@@ -8,18 +9,23 @@ import { EachPost } from "./EachPosts";
 
 export function GetPosts(){
     const [posts,setPosts] = useState([])
+    let {pageNum} = useParams()
+    let pageNumb = parseInt(pageNum)
+    const [pageNumber, setPageNumber] = useState(pageNumb)
 
     useEffect(() => {
         const fetchPosts = async function() {
-            const response = await fetch("http://localhost:3001/posts");
+            const response = await fetch(`http://localhost:3001/posts/?page=${pageNumber}&pageSize=10`);
             const json = await response.json();
-            setPosts(json.results);
+            setPosts(json.results); 
+                   console.log(json.results)
         } 
 
         fetchPosts();
-        
-        
-    }, []);
+
+    }, [pageNumber]);
+
+   
 
   return (
       <div className ="posts-page" >
@@ -31,6 +37,8 @@ export function GetPosts(){
                 return <EachPost post = {post} key = {index}/>
                 })
             } 
+        <button className= 'next' type="submit" onClick = {() => {setPageNumber(pageNumber-1)}}>Previous</button>
+        <button className= 'next'type="submit" onClick = {() => {setPageNumber(pageNumber+1)}}>Next</button>
       </div>
    )
 

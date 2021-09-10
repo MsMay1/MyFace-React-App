@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 
+
 export function CreateUser(){
+    
     // const [name, setName] = useState("")
     // const [username, setUsername] = useState("")
     // const [email, setEmail] = useState("")
@@ -20,20 +22,24 @@ export function CreateUser(){
                     Name:
                     <input type="text" name="name"  required/>
                 </label>
-            </div>
-            <div>
                 <label>
                     Username:
                     <input type="text" name="username" required />
                 </label>
-            </div> 
-            <div>
                  <label>
                     Email:
                     <input type="email" name="email"  required/>
                 </label>
-            </div>  
-            <button type="submit" >Submit</button>
+                <label>
+                ProfileImageUrl:
+                <input type="text" name="profileImageUrl" required/>
+                </label>
+                <label>
+                    CoverImageUrl:
+                    <input type="text" name="coverImageUrl" required/>
+                </label>
+                    <button type="submit" >Submit</button>
+            </div>
         </form>
     )    
 
