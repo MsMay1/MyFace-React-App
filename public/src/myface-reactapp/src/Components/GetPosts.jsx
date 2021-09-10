@@ -9,9 +9,7 @@ import { useParams } from "react-router";
 
 export function GetPosts(){
     const [posts,setPosts] = useState([])
-    let {pageNum} = useParams()
-    let pageNumb = parseInt(pageNum)
-    const [pageNumber, setPageNumber] = useState(pageNumb)
+    const [pageNumber, setPageNumber] = useState(1)
 
     useEffect(() => {
         const fetchPosts = async function() {
@@ -37,8 +35,8 @@ export function GetPosts(){
                 return <EachPost post = {post} key = {index}/>
                 })
             } 
-        <button className= 'next' type="submit" onClick = {() => {setPageNumber(pageNumber-1)}}>Previous</button>
-        <button className= 'next'type="submit" onClick = {() => {setPageNumber(pageNumber+1)}}>Next</button>
+        <button type="submit" onClick = {() => {setPageNumber(pageNumber-1)}}>Previous</button>
+        <button type="submit" onClick = {() => {setPageNumber(pageNumber+1)}}>Next</button>
       </div>
    )
 
